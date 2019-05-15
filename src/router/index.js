@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Contains from '../components/Contains'
-import Sidebar from '../components/Sidebar'
+import Main from '../components/Main'
 Vue.use(Router)
 
 export default new Router({
@@ -11,9 +11,9 @@ export default new Router({
       name: 'Contains',
       component: Contains,
       children:[{
-        path: '/sidebar',
-        name: 'Sidebar',
-        component: Sidebar
+        path: '/main',
+        name: 'Main',
+        component: Main
       }]
     }
     
