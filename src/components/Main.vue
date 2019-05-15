@@ -5,7 +5,7 @@
       :data="tableData"
       style="width: 100%">
       <el-table-column
-        prop="date"
+        prop="age"
         label="日期"
         width="180">
       </el-table-column>
@@ -27,25 +27,14 @@
 export default {
     data() {
         return {
-          tableData: [{
-            date: '2016-05-02',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1518 弄'
-          }, {
-            date: '2016-05-04',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1517 弄'
-          }, {
-            date: '2016-05-01',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1519 弄'
-          }, {
-            date: '2016-05-03',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1516 弄'
-          }]
+          tableData: []
         }
-      }
+      },
+    mounted:function(){ //mounted　表示这个 Vue 对象加载成功了
+        fetch("http://localhost:8080/").then(response => response.json())
+  .then(data => tableData)
+  .catch(e => console.log("Oops, error", e))
+    }
 }
 </script>
 
