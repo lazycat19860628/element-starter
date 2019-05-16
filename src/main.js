@@ -11,9 +11,3 @@ new Vue({
   router,
   render: h => h(App)
 })
-
-new Vue({
-  el: '#header',
-  router,
-  render: h => h(Header)
-})
