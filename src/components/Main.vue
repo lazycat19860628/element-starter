@@ -30,9 +30,11 @@ export default {
           tableData: []
         }
       },
+    
     mounted:function(){ //mounted　表示这个 Vue 对象加载成功了
+       let _this = this;
         fetch("http://localhost:8080/").then(response => response.json())
-  .then(data => tableData)
+  .then(data => {_this.tableData=data})
   .catch(e => console.log("Oops, error", e))
     }
 }
