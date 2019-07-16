@@ -1,7 +1,9 @@
 <template>
   <el-container>
 
-    <el-aside style="width:20%; border: 1px solid #eee"><router-link to="/main">Go to main</router-link>
+    <el-aside style="width:20%; border: 1px solid #eee">
+      <router-link to="/main">Go to main</router-link>
+      <router-link to="/main1">Go to main1</router-link>
     </el-aside>
     <el-main style="width:80%; border: 1px solid #eee"> 
         <router-view></router-view>

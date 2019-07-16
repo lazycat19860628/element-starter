@@ -33,7 +33,13 @@ export default {
     
     mounted:function(){ //mounted　表示这个 Vue 对象加载成功了
         let _this = this;
-        fetch("http://localhost:8080/")
+      //  token = "eyJhbGciOiJub25lIn0.eyJzdWIiOiJ1c2VyIiwiY3JlYXRlZCI6MTU2MDQ5OTgzMzgyNCwiZXhwIjoxNTYwNDk5ODQzfQ."
+        fetch("http://localhost:8080/person"
+        ,{headers:{
+         // Access-Control-Allow-Origin
+          //Authorization:"eyJhbGciOiJub25lIn0.eyJzdWIiOiJ1c2VyIiwiY3JlYXRlZCI6MTU2MDQ5OTgzMzgyNCwiZXhwIjoxNTYwNDk5ODQzfQ.",
+        }}
+        )
         .then(response => response.json())
         .then(data => {_this.tableData=data})
         .catch(e => console.log("Oops, error", e))
